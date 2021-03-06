@@ -1,1 +1,187 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: Poppins-Regular;
+    src: url(../src/assets/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Medium;
+    src: url(../src/assets/fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+    font-family: Poppins-Bold;
+    src: url(../src/assets/fonts/Poppins-Bold.ttf);
+}
+
+.row{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.header{
+    padding:10px 30px 10px 30px;
+    border-bottom: 1px solid rgb(0 0 0 / 10%);
+    margin-bottom: 32px;
+}
+
+.ul-header {
+    margin-bottom: 0px;
+    li {
+        list-style: none;
+        display: inline-block;
+        margin-right: 30px;
+        &:last-child{
+            margin-right: 0px;
+        }
+    }
+}
+
+.app-title {
+    font-family: Poppins-Bold;
+    font-size: 26px;
+    color: #000000;
+}
+
+.task-container{
+    padding:0px 30px 0px 30px;
+}
+
+.card-main{
+  padding-left: 0px;
+  padding-right: 30px;
+  @media (max-width:767px) {
+      padding-right: 0px;
+  }
+}
+
+.todo-title {
+    font-family: Poppins-Medium;
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.todo-item {
+    width: 100%;
+    min-height: 88px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding:20px;
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #000000;
+}
+
+.todo-add-new {
+    height: 160px;
+    border: 1px dashed #00000033;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #000000;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.todo-edit {
+    height: 160px;
+    border: 1px dashed #00000033;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    input{
+        width: 100%;
+        border: 0px;
+        font-family: Poppins-Regular;
+        font-size: 16px;
+        color: #000000;
+        margin-bottom: 74px;
+        &::placeholder{
+            color: #00000080;  
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+   
+}
+
+.add-card-txt{
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #000000;
+    cursor: pointer;
+    margin-right: 19px;
+}
+
+.cancel-txt{
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #00000080;
+    cursor: pointer;
+}
+
+.model-title {
+    font-family: Poppins-Medium;
+    font-size: 24px;
+    color: #000000;
+    margin-bottom: 20px;
+    display: inline-block;
+    @media (max-width:767px) {
+        font-size: 16px;
+    }
+}
+
+.model-description {
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #000000;
+}
+
+#todo-create-model{
+    .modal-dialog{
+        max-width: 984px;
+
+        .modal-body{
+            padding:24px 25px 41px 25px;
+
+            textarea{
+                width: 100%;
+                height: 88px;
+                border: 1px solid #00000066;
+                border-radius: 10px;
+                font-family: Poppins-Regular;
+                font-size: 16px;
+                color: #000000;
+                padding: 20px;
+                margin-bottom: 20px;
+                &::placeholder{
+                    color: #00000080;  
+                }
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+.select-color {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #00000066;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin-right: 10px;
+    @media (max-width:767px) {
+        width: 30px;
+        height: 30px;
+    }
+}

@@ -1,0 +1,43 @@
+<div id="todo-create-model" class="modal fade" bsModal #todoCreateModel="bs-modal">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div>
+                    <div class="row">
+                        <div class="col-8 p-0">
+                            <span class="model-title">The title for this card would be here</span>
+                        </div>
+                        <div class="col-4 p-0 text-right">
+                            <span (click)="submit()" class="mr-3">
+                                <img src="../../assets/check-circle.svg">
+                            </span>
+                            <span (click)="hidePopup()">
+                                <img src="../../assets/cross-circle.svg">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="model-description">
+                        Description
+                    </div>
+                    <div>
+                        <textarea type="text" [(ngModel)]="descriptionInput"
+                            placeholder="Enter a description for this card...">
+                        </textarea>
+                    </div>
+                    <div>
+                        <div class="model-description">
+                            Color
+                        </div>
+                        <div>
+                            <ng-container *ngFor="let color of colorList">
+                                <span [style.background-color]="color" (click)="selectColor=color" class="select-color">
+                                    <img *ngIf="selectColor === color" src="../../assets/check.svg">
+                                </span>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
