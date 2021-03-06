@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Constants } from '../constants';
 import { TodoService } from '../service/todo.service';
@@ -31,7 +32,7 @@ export class TodoListComponent implements OnInit {
   }
 
   addCart() {
-    const indexLength = Math.floor(Math.random() * Constants.colourList.length); 
+    const indexLength = Math.floor(Math.random() * Constants.colourList.length);
     const selectColor = Constants.colourList[indexLength];
     if (this.descriptionInput && selectColor) {
       this.searchTodo(this.title, { description: this.descriptionInput, color: selectColor });
@@ -73,6 +74,22 @@ export class TodoListComponent implements OnInit {
           this.todoService.create(todoList);
           this.todoService.refreshList();
         }
+      }
+    }
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.list, event.previousIndex, event.currentIndex);
+    this.reSorting(this.title, this.list);
+  }
+
+  reSorting(title: string, reList: any) {
+    let todoList = this.todoService.getList();
+    if (todoList) {
+      let titleList = todoList.findIndex(l => l.title && l.title.toLowerCase() == title.toLowerCase());
+      if (titleList >= -1) {
+        todoList[titleList].list = reList
+        this.todoService.create(todoList);
       }
     }
   }
