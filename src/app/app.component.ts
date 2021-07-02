@@ -33,6 +33,11 @@ export class AppComponent implements OnInit {
     this.todoService.todoList$.subscribe(res => {
       this.todoList = res;
     });
+
+    /* this.todoService.getServer().then(res => {
+      console.log("res", res);
+      this.todoList = res;
+    }).catch(e => {}); */
   }
 
   onEditTodo(event) {
